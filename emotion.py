@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import cv2
 from deepface import DeepFace
 
@@ -41,7 +43,7 @@ while True:
         emotion_idx = preds.argmax()
         emotion = emotion_labels[emotion_idx]
 
-        # Draw rectangle around face and label with predicted emotion
+        # Draw rectangle around face and label with predicted emotion and mark negative emotions in red
 
         if emotion == 'ЗЛОСТЬ':
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
